@@ -12,3 +12,14 @@ nav {
 nav li {
     display: inline-flex;
 }
+
+.box{
+    display: flex;
+    justify-content: center;
+    min-height: 400px;
+}
+
+.card{
+    margin-right: auto;
+    margin-right: auto;
+}
