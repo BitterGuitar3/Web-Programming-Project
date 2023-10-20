@@ -20,6 +20,13 @@ nav li {
 }
 
 .card{
-    margin-right: auto;
-    margin-right: auto;
+    height: 250px;
+    width: 335px;
+    padding: 20px 35px;
+    background: brown;
+    border-radius: 20px;
+    margin: 15px;
+    position: relative;
+    text-align: center;
+    border: 2px solid black;
 }
