@@ -21,6 +21,49 @@
         </header>
 
         <p>This is the order page</p>
+
+        <main>
+            <h2>Checkout</h2>
+            <form action="process_order.php" method="post">
+                <!-- Billing Information -->
+                <h3>Billing Information</h3>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+    
+                <label for="phone">Phone Number:</label>
+                <input type="phone" id="phone" name="phone" required>
+    
+                <!-- Shipping Information -->
+                <h3>Shipping Information</h3>
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+    
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" required>
+    
+                <label for="zip">ZIP Code:</label>
+                <input type="text" id="zip" name="zip" required>
+    
+                <!-- Payment Information -->
+                <h3>Payment Information</h3>
+                <label for="card">Credit Card Number:</label>
+                <input type="text" id="card" name="card" required>
+    
+                <label for="expiration">Expiration Date:</label>
+                <input type="text" id="expiration" name="expiration" required>
+    
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" required>
+    
+               <!-- Coupons -->
+                <h3></h3>
+                <label for="coupons">Enter Coupons or Gift Card Number:</label>
+                <input type="text" id="coupon" name="coupon">
+     
+            </form>
+            </br>
+            <input type="submit" value="Place Order">
+        </main>
         
     </body>
 
