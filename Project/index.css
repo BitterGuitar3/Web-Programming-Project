@@ -2,13 +2,57 @@ header {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    height: 200px;
+    background: radial-gradient(green, black);
+    width: 85%;
+    padding-top: 10px;
+}
+
+h1{
+    font-size: 70px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+body{
+    background: linear-gradient(to right,green, white, red);
+}
+
+footer{
+    background-color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    height: 10%;
 }
 
 nav {
-    text-align: center;
-    word-spacing: 30px;
+    background-color: green;
+    line-height: 50px;
+    word-spacing: 150px;
+    font-size: 20px;
+    height: 30%;
 }
 
 nav li {
     display: inline-flex;
+    font-size: 36px;
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    min-height: 400px;
+}
+
+.card{
+    height: 250px;
+    width: 335px;
+    padding: 20px 35px;
+    background: brown;
+    border-radius: 20px;
+    margin: 15px;
+    position: relative;
+    text-align: center;
+    border: 2px solid black;
 }
