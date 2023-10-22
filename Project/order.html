@@ -5,13 +5,6 @@
     <title>Order</title>
     <link rel="stylesheet" href="index.css">
 </head>
-<body><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Checkout</title>
-    <link rel="stylesheet" href="index.css">
-</head>
 <body>
     <header>
         <h1>Italian Restaurant</h1>
@@ -20,52 +13,63 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="menu.html">Menu</a></li>
                 <li><a href="order.html">Order</a></li>
-                <li><a href="checkout.html">Checkout</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
-<br>
+
     <main>
-        <h2>Checkout</h2>
+        <h2>Order Your Food</h2>
         <form action="process_order.php" method="post">
-            <!-- Billing Information -->
-            <h3>Billing Information</h3>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+            <div class="item">
+                <img src="pizza.jpg" alt="Pizza">
+                <h3>Pizza</h3>
+                <p>Delicious pizza with your choice of toppings.</p>
+                <p>Price: $10.99</p>
+                <input type="checkbox" name="order_item[]" value="pizza">
+            </div>
 
-            <label for="phone">Phone Number:</label>
-            <input type="phone" id="phone" name="phone" required>
+            <div class="item">
+                <img src="pasta.jpg" alt="Pasta">
+                <h3>Pasta</h3>
+                <p>Homemade pasta with various sauces to choose from.</p>
+                <p>Price: $8.99</p>
+                <input type="checkbox" name="order_item[]" value="pasta">
+            </div>
 
-            <!-- Shipping Information -->
-            <h3>Shipping Information</h3>
-            <label for="address">Address:</label>
-            <input type="text" id="address" name="address" required>
+            <div class="item">
+                <img src="Artichoke_Spinach_Dip.jpg" alt="Artichoke & Spinach Dip">
+                <h3>Artichoke & Spinach Dip</h3>
+                <p>A blend of Italian cheeses served with fried pasta chips.</p>
+                <p>Price: $5.99</p>
+                <input type="checkbox" name="order_item[]" value="Dip">
+            </div>
 
-            <label for="city">City:</label>
-            <input type="text" id="city" name="city" required>
+            <div class="item">
+                <img src="Cinnamon_Sticks.jpg" alt="Cinnamon Sticks">
+                <h3>Cinnamon Sticks</h3>
+                <p>A batch of our homemade Cinnamon Sticks topped with our signature cream cheese frosting.</p>
+                <p>Price: $5.99</p>
+                <input type="checkbox" name="order_item[]" value="Sticks">
+            </div>
 
-            <label for="zip">ZIP Code:</label>
-            <input type="text" id="zip" name="zip" required>
-
-            <!-- Payment Information -->
-            <h3>Payment Information</h3>
-            <label for="card">Credit Card Number:</label>
-            <input type="text" id="card" name="card" required>
-
-            <label for="expiration">Expiration Date:</label>
-            <input type="text" id="expiration" name="expiration" required>
-
-            <label for="cvv">CVV:</label>
-            <input type="text" id="cvv" name="cvv" required>
-
-   	    <!-- Coupons -->
-	    <h3></h3>
-            <label for="coupons">Enter Coupons or Gift Card Number:</label>
-            <input type="text" id="coupon" name="coupon">
- 
-</form>
-</br>
-            <input type="submit" value="Place Order">
+	<br>
+            <input type="submit" value="Submit Order">
+	</br>
+        </form>
     </main>
+   
+<script>
+        function saveOrder() {
+            // Get the form data and save it to local storage
+            const form = document.getElementById("orderForm");
+            const formData = new FormData(form);
+            const orderData = {};
+            for (const [name, value] of formData.entries()) {
+                orderData[name] = value;
+            }
+            localStorage.setItem('orderData', JSON.stringify(orderData));
+        }
+    </script>
 </body>
 </html>
