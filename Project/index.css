@@ -20,7 +20,6 @@ body{
 
 footer{
     background-color: white;
-    position: fixed;
     width: 100%;
     bottom: 0;
     height: 10%;
@@ -39,6 +38,12 @@ nav li {
     font-size: 36px;
 }
 
+main{
+    background-color: black;
+    width: 85%;
+    margin: auto;
+}
+
 .box{
     display: flex;
     justify-content: center;
@@ -55,4 +60,9 @@ nav li {
     position: relative;
     text-align: center;
     border: 2px solid black;
+}
+
+.optionPic{
+    width: 150px;
+    height: 150px;
 }
