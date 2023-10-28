@@ -1,43 +1,126 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="index.css">
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Main Page</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <title>Main Page</title>
+    <style>
+        /* Add some CSS to style the header and menu items */
+        header {
+            background-color: #333; /* Background color of the header */
+            color: #fff; /* Text color of the header */
+            text-align: center;
+            padding: 10px 0;
+        }
 
-    <body>
-        <!--A Header that will be at the top of each page and act as the navigator-->
-        <header>
-            <h1>Italian Restraunt</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="menu.html">Menu</a></li>
-                    <li><a href="order.html">Order</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
 
-        <main>
-            <p>This is the home page</p>
-            <table class="mainTable"> <!--A table that will contain the individual section of the main menu.-->
-                <tr>
-                    <td>test</td>
-                    <td>test</td>
-                    <td>test</td>
-                    <td>test</td>
-                </tr>
-            </table>
-        </main>
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
 
-        <!--This is where there will be an accesibility statement as well a smalller more basic version of navigation that is provided at the top-->
-        <footer>
-            <p>Testing</p>
-            <p>Testing</p>
-            <p>Testing</p>
-            <p>Testing</p>
-        </footer>    
-    </body>
+        nav ul li a {
+            color: red; /* Set the color of the menu items to red */
+            text-decoration: none;
+        }
+
+        /* Style the "About Us" and "Hours" sections */
+        .about-us {
+            padding: 20px;
+            max-width: 50%; /* Set the maximum width to ensure it doesn't overlap the image */
+            float: right; /* Move the "About Us" section to the right */
+        }
+
+        .hours {
+            padding: 20px;
+            max-width: 50%; /* Set the maximum width for consistent formatting */
+            float: right; /* Move the "Hours" section to the right */
+        }
+
+        /* Style the image */
+        .main-image {
+            max-width: 50%; /* Adjust the image width as needed */
+        }
+
+        /* Style the reviews section */
+        .reviews {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .review {
+            display: inline-block;
+            width: 20%; /* Adjust the width of each review as needed */
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!--A Header that will be at the top of each page and act as the navigator-->
+    <header>
+        <h1>Italian Restaurant</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="order.html">Order</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <p>This is the home page</p>
+
+
+        <!-- Add the image on the left -->
+        <img class="main-image" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.harpersbazaar.com%2Fuk%2Fculture%2Fnews%2Fg37986%2Fbest-italian-restaurants-in-london%2F&psig=AOvVaw2Tg03Nnv4s4raaTrzb0AoH&ust=1698428065632000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCKiTjeKflIIDFQAAAAAdAAAAABAD" alt="Italian Restaurant Image">
+
+        <!-- About Us Section on the right -->
+        <div class="about-us">
+            <h2>About Us</h2>
+            <p>Welcome to our Italian restaurant! We are dedicated to providing delicious Italian cuisine in a cozy atmosphere.</p>
+        </div>
+
+        <!-- Hours Section on the right, directly below About Us -->
+        <div class="hours">
+            <h2>Hours</h2>
+            <p>Monday - Friday: 11:00 AM - 9:00 PM</p>
+            <p>Saturday - Sunday: 12:00 PM - 10:00 PM</p>
+        </div>
+
+    </main>
+
+    <!--This is where there will be an accessibility statement as well as a smaller more of navigation that is provided at the top-->
+
+    <!-- Reviews Section in the footer of the page -->
+    <footer>
+        <div class="reviews">
+            <div class="review">
+                <img src="review1.jpg" alt="Review 1">
+                <p>Great food and service!</p>
+            </div>
+            <div class="review">
+                <img src="review2.jpg" alt="Review 2">
+                <p>Highly recommended!</p>
+            </div>
+            <div class="review">
+                <img src="review3.jpg" alt="Review 3">
+                <p>Fantastic experience!</p>
+            </div>
+            <div class="review">
+                <img src="review4.jpg" alt="Review 4">
+                <p>Delicious dishes!</p>
+            </div>
+            <div class="review">
+                <img src="review5.jpg" alt="Review 5">
+                <p>Will come back again!</p>
+            </div>
+        </div>
+    </footer>
+</body>
 </html>
