@@ -2,68 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index.css">
     <title>Main Page</title>
-    <style>
-        /* Add some CSS to style the header and menu items */
-        header {
-            background-color: #333; /* Background color of the header */
-            color: #fff; /* Text color of the header */
-            text-align: center;
-            padding: 10px 0;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 20px;
-        }
-
-        nav ul li a {
-            color: red; /* Set the color of the menu items to red */
-            text-decoration: none;
-        }
-
-        /* Style the "About Us" and "Hours" sections */
-        .about-us {
-            padding: 20px;
-            max-width: 50%; /* Set the maximum width to ensure it doesn't overlap the image */
-            float: right; /* Move the "About Us" section to the right */
-        }
-
-        .hours {
-            padding: 20px;
-            max-width: 50%; /* Set the maximum width for consistent formatting */
-            float: right; /* Move the "Hours" section to the right */
-        }
-
-        /* Style the image */
-        .main-image {
-            max-width: 50%; /* Adjust the image width as needed */
-        }
-
-        /* Style the reviews section */
-        .reviews {
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        .review {
-            display: inline-block;
-            width: 20%; /* Adjust the width of each review as needed */
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
     <!--A Header that will be at the top of each page and act as the navigator-->
     <header>
         <h1>Italian Restaurant</h1>
-        <nav>
+        <nav class="main-nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="menu.html">Menu</a></li>
@@ -120,6 +66,20 @@
                 <img src="review5.jpg" alt="Review 5">
                 <p>Will come back again!</p>
             </div>
+        </div>
+        <div class="accessibility">
+            <h3><strong>Accessibility Statement</strong></h3>
+            <p>At [Restaurant Name], we are committed to ensuring that our website is accessible to everyone, regardless of ability or technology.
+                We strive to maintain compliance with the Web Content Accessibility Guidelines (WCAG) 2.1.
+            </p>
+            <nav class="mini-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="order.html">Order</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </footer>
 </body>

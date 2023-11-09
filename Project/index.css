@@ -3,9 +3,10 @@ header {
     margin-right: auto;
     text-align: center;
     height: 200px;
-    background: radial-gradient(green, black);
+    background-color: #424242;
+    color: #fff;
     width: 85%;
-    padding-top: 10px;
+    padding: 10px 0;
 }
 
 h1{
@@ -15,33 +16,58 @@ h1{
 }
 
 body{
-    background: linear-gradient(to right,green, white, red);
+    background: grey;
+    color: white;
 }
 
 footer{
-    background-color: white;
+    background-color: black;
     width: 100%;
     bottom: 0;
     height: 10%;
+    text-align: center;
 }
 
-nav {
-    background-color: green;
+.main-nav {
+    background-color: #222222;
     line-height: 50px;
     word-spacing: 150px;
     font-size: 20px;
     height: 30%;
+    position: relative;
+    top: 5px;
 }
 
-nav li {
+.main-nav ul li {
     display: inline-flex;
     font-size: 36px;
 }
 
+.main-nav ul {
+    padding: 0;
+    position: relative;
+    top: 2px;
+}
+
+.main-nav ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+.main-nav ul li a:hover {
+    text-shadow: 
+    0 0 4px red,
+    0 0 11px red,
+    0 0 19px red,
+    0 0 100px red;
+    text-decoration: underline;
+}
+
 main{
     background-color: black;
-    width: 85%;
+    width: 80%;
     margin: auto;
+    border-radius: 40px ;
 }
 
 .box{
@@ -50,19 +76,87 @@ main{
     min-height: 400px;
 }
 
+.contactInfo {
+    text-align: center;
+}
+
 .card{
     height: 250px;
-    width: 335px;
-    padding: 20px 35px;
+    width: 300px;
+    padding-top: 10px;
     background: brown;
     border-radius: 20px;
     margin: 15px;
-    position: relative;
     text-align: center;
-    border: 2px solid black;
+    border: 2px solid white;
+}
+
+.card:hover{
+    color: black;
+    background: linear-gradient(to right,green, white, red);
+}
+
+.pageName {
+    font-size: 23px;
+    margin: auto;
+    padding: 1px;
+}
+
+.cardName{
+    font-size: 30px; 
+}
+
+.mini-nav {
+    word-spacing: 150px;
+    padding: 2px;
+}
+
+.mini-nav ul li {
+    display: inline-flex;
 }
 
 .optionPic{
     width: 150px;
     height: 150px;
+}
+
+/* Style the "About Us" and "Hours" sections */
+.about-us {
+    padding: 20px;
+    max-width: 50%; /* Set the maximum width to ensure it doesn't overlap the image */
+    float: right; /* Move the "About Us" section to the right */
+}
+
+.hours {
+    padding: 20px;
+    max-width: 50%; /* Set the maximum width for consistent formatting */
+    float: right; /* Move the "Hours" section to the right */
+}
+
+/* Style the image */
+.main-image {
+    max-width: 50%; /* Adjust the image width as needed */
+}
+
+/* Style the reviews section */
+.reviews {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.review {
+    display: inline-block;
+    width: 20%; /* Adjust the width of each review as needed */
+    text-align: center;
+}
+
+.icons {
+    display: inline-flex;
+}
+
+.social_icon{
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    padding: 10px;
 }
