@@ -20,7 +20,7 @@
 
         <main>
             <h2>Order Your Food</h2>
-            <form action="process_order.php" method="post">
+            <form action="process_order.php" method="post" id="orderForm">
                 <div class="item">
                     <h3>Make Your Own Pizza</h3>
                     <p>Select your toppings:</p>
@@ -30,69 +30,69 @@
                     <p>Special Instructions:</p>
                     <input type="text" name="pizza_instructions" placeholder="Add special instructions...">
                 </div>
-<br>
-</br>
+                <br>
+                </br>
                 <div class="item">
-    <h3>Pizza ai funghi</h3>
-    <p>Delicious pizza with mushrooms.</p>
-    <p>Price: $11.99</p>
-    <input type="checkbox" name="order_item[]" value="Pizza ai funghi">
-</div>
+                    <h3>Pizza ai funghi</h3>
+                    <p>Delicious pizza with mushrooms.</p>
+                    <p>Price: $11.99</p>
+                    <input type="checkbox" name="order_item[]" value="Pizza ai funghi">
+                </div>
 
-<!-- Pizza bianca -->
-<div class="item">
-    <h3>Pizza bianca</h3>
-    <p>White pizza with olive oil, rosemary, and sea salt.</p>
-    <p>Price: $10.99</p>
-    <input type="checkbox" name="order_item[]" value="Pizza bianca">
-</div>
+                <!-- Pizza bianca -->
+                <div class="item">
+                    <h3>Pizza bianca</h3>
+                    <p>White pizza with olive oil, rosemary, and sea salt.</p>
+                    <p>Price: $10.99</p>
+                    <input type="checkbox" name="order_item[]" value="Pizza bianca">
+                </div>
 
-<!-- Pizza capricciosa -->
-<div class="item">
-    <h3>Pizza capricciosa</h3>
-    <p>Deluxe pizza with a variety of toppings.</p>
-    <p>Price: $12.99</p>
-    <input type="checkbox" name="order_item[]" value="Pizza capricciosa">
-</div>
+                <!-- Pizza capricciosa -->
+                <div class="item">
+                    <h3>Pizza capricciosa</h3>
+                    <p>Deluxe pizza with a variety of toppings.</p>
+                    <p>Price: $12.99</p>
+                    <input type="checkbox" name="order_item[]" value="Pizza capricciosa">
+                </div>
 
-<!-- Capreses pizza -->
-<div class="item">
-    <h3>Capreses pizza</h3>
-    <p>Pizza topped with fresh tomatoes, mozzarella, and basil.</p>
-    <p>Price: $10.99</p>
-    <input type="checkbox" name="order_item[]" value="Capreses pizza">
-</div>
+                <!-- Capreses pizza -->
+                <div class="item">
+                    <h3>Capreses pizza</h3>
+                    <p>Pizza topped with fresh tomatoes, mozzarella, and basil.</p>
+                    <p>Price: $10.99</p>
+                    <input type="checkbox" name="order_item[]" value="Capreses pizza">
+                </div>
 
-<!-- Calzone pizza -->
-<div class="item">
-    <h3>Calzone pizza</h3>
-    <p>Pizza folded into a half-moon shape with various fillings.</p>
-    <p>Price: $12.99</p>
-    <input type="checkbox" name="order_item[]" value="Calzone pizza">
-</div>
+                <!-- Calzone pizza -->
+                <div class="item">
+                    <h3>Calzone pizza</h3>
+                    <p>Pizza folded into a half-moon shape with various fillings.</p>
+                    <p>Price: $12.99</p>
+                    <input type="checkbox" name="order_item[]" value="Calzone pizza">
+                </div>
 
-<!-- Pasta -->
-<div class="item">
-    <h3>Pasta</h3>
-    <p>Choose your pasta dish:</p>
-    <select name="pasta_type">
-        <option value="Spaghetti">Spaghetti</option>
-        <option value="Cacio e pepe">Cacio e pepe</option>
-        <option value="Tortellini">Tortellini</option>
-        <option value="Carbonara">Carbonara</option>
-        <option value="Lasagna">Lasagna</option>
-        <option value="Radicchio pasticcio">Radicchio pasticcio</option>
-        <option value="Lasagne bianca">Lasagne bianca</option>
-        <option value="Lasagne al pane carasau">Lasagne al pane carasau</option>
-        <option value="Lasagne in brodo alla Molisana">Lasagne in brodo alla Molisana</option>
-        <option value="Lasagne alla Norma">Lasagne alla Norma</option>
-        <option value="Vincisgrassi">Vincisgrassi</option>
-    </select>
-    <p>Price: Varies</p>
-<input type="checkbox" name="order_item[]" value="Pasta">
-</div>
-	            <br>
-                <input type="submit" value="Submit Order">
+                <!-- Pasta -->
+                <div class="item">
+                    <h3>Pasta</h3>
+                    <p>Choose your pasta dish:</p>
+                    <select name="pasta_type">
+                        <option value="Spaghetti">Spaghetti</option>
+                        <option value="Cacio e pepe">Cacio e pepe</option>
+                        <option value="Tortellini">Tortellini</option>
+                        <option value="Carbonara">Carbonara</option>
+                        <option value="Lasagna">Lasagna</option>
+                        <option value="Radicchio pasticcio">Radicchio pasticcio</option>
+                        <option value="Lasagne bianca">Lasagne bianca</option>
+                        <option value="Lasagne al pane carasau">Lasagne al pane carasau</option>
+                        <option value="Lasagne in brodo alla Molisana">Lasagne in brodo alla Molisana</option>
+                        <option value="Lasagne alla Norma">Lasagne alla Norma</option>
+                        <option value="Vincisgrassi">Vincisgrassi</option>
+                    </select>
+                    <p>Price: Varies</p>
+                <input type="checkbox" name="order_item[]" value="Pasta">
+                </div>
+                    <br>
+                    <input type="submit" value="Submit Order" id="submit">
             </form>
 
             <!--This is where there will be an accesibility statement as well a smalller more basic version of navigation that is provided at the top-->
@@ -114,7 +114,12 @@
             </footer>
         </main>
 
+        <!--Currently not working as intended-->
         <script>
+            let submitButton = document.getElementById("submit");
+
+            submitButton.addEventListener("click", saveOrder);
+
             function saveOrder() {
                 // Get the form data and save it to local storage
                 const form = document.getElementById("orderForm");
