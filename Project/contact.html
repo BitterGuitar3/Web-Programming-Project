@@ -37,27 +37,51 @@
                     <div class="card">
                         <img src="email_icon.png" width="50" height="50" alt="Email Icon"></img>
                         <h3 class="cardName">Email</h3>
-                        <p>Email <br>
-                            or <br>
-                        <button id="email-button">click me</button>
-                        </p>
+                        <p>italianrestraunt@gmail.com</p>
+                        <p>or</p>
+                        <p><a class="mail_btn" href="mailto:person@example.com">Click Here!</a></p>
                     </div>
                     <div class="card">
                         <img src="address_icon.webp" width="50" height="50" alt="Address Icon"></img>
                         <h3 class="cardName">Address</h3>
-                        <p>Some address</p>
+                        <p>North Georgia Office <br>
+                            4440 Keith Bridge Rd. Cumming, GA 30041</p>
                     </div>
                     <div class="card">
                         <img src="socials_icon.png" width="50" height="50" alt="Social media Icon"></img>
                         <h3 class="cardName">Socials</h3>
                         <div class="icons">
                             <!--Icons for different social media. Needs to be clickable, but currently struggling with that at the moment.-->
-                            <img src="facebook.png" class="social_icon"></img>
-                            <img src="instagram.png" class="social_icon"></img>
-                            <img src="twitter.png" class="social_icon"></img>
+                            <a href="https://www.facebook.com"><img src="facebook.png" class="social_icon"></a>
+                            <a href="https://www.instagram.com"><img src="instagram.png" class="social_icon"></a>
+                            <a href="https://twitter.com"><img src="twitter.png" class="social_icon"></a>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="application">
+                <h3>Apply to Work Here</h3>
+                <form action="apply page.php">
+                    <label for="fname">Full name:</label>
+                    <input type="text" id="fname" name="fname" required>
+                    <br>
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" placeholder="email@domain.com" required>
+                    <br>
+                    <label for="phone number">Phone:</label>
+                    <input type="tel" id="phone" placeholder="(###)-###-####" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                    <br>
+                    <label for="lname">Tell us about yourself:</label>
+                    <textarea name="summary" rows="6" cols="35">Max: 200 words</textarea>
+                    <br>
+                    <label for="myfile">Upload a resume:</label>
+                    <input type="file" id="myfile" name="myfile" accept=".pdf, .doc, .docx" required>
+                    <br>
+                    <p>
+                        <input type="submit" id="submit" name="Submit" value="Submit" >
+                    </p>
+                </form>
             </div>
         </main>
 
@@ -81,9 +105,63 @@
         </footer>
 
         <script>
-            let button = document.getElementById("email-button");
+            document.addEventListener("DOMContentLoaded", function () {
+                let button = document.getElementById("submit");
+                button.addEventListener("click", validateForm);
+            });
 
-            button.addEventListener("click", function() { alert("Anemail@gmail.com")});
+            function validateForm() {
+                try {
+                    var fname = document.getElementById("fname");
+                    var email = document.getElementById("email");
+                    var phone = document.getElementById("phone");
+                    var resume = document.getElementById("myFile");
+
+                    // Remove existing error styles
+                    removeErrorStyles([fname, email, phone, resume]);
+        
+                    //Validation check
+                    if (fname.value.trim().length < 1 || fname.value == null) {
+                        throwValidationError(fname, 'Please enter your full name.');
+                    }
+
+                    //Validation check for email
+                    var emailRegex = /^\S+@\S+\.\S+$/;
+                    if (!emailRegex.test(email.value.trim())) {
+                        throwValidationError(email, 'Please enter your email address.');
+                    }
+
+                    //Validation check for phone number
+                    var phoneRegex = /^\d{3}-\d{3}-\d{4}$/;
+                    if (!phoneRegex.test(phone.value.trim())) {
+                        throwValidationError(phone, 'Please enter your phone number.');
+                    }
+
+                    // Check if a file has been selected for the resume
+                    if (!resume.value) {
+                        throwValidationError(resume, 'Please upload your resume.');
+                    }
+        
+                    return true; // Submit the form if all checks pass
+
+                } catch (error) {
+                    alert(error.message);
+                    return false; // Prevent form submission if an error occurs
+                }
+            }
+
+            function throwValidationError(element, message) {
+                alert(message);
+                element.classList.add('error');
+                throw new Error(message);
+            }
+
+            function removeErrorStyles(elements) {
+                elements.forEach(element => {
+                    element.classList.remove('error');
+                });
+            }
         </script>
+        
     </body>
 </html>
