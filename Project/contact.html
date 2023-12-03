@@ -62,24 +62,24 @@
 
             <div class="application">
                 <h3>Apply to Work Here</h3>
-                <form action="apply page.php">
-                    <label for="fname">Full name:</label>
-                    <input type="text" id="fname" name="fname" required>
+                <form class="applyForm" action="contact.html">
+                    <label class="applyLable" for="fname">Full name:</label>
+                    <input class="applyInputs" type="text" id="fname" name="fname" required>
                     <br>
-                    <label for="email">Email Address:</label>
-                    <input type="email" id="email" placeholder="email@domain.com" required>
+                    <label class="applyLable" for="email">Email Address:</label>
+                    <input class="applyInputs" type="email" id="email" placeholder="email@domain.com" required>
                     <br>
-                    <label for="phone number">Phone:</label>
-                    <input type="tel" id="phone" placeholder="(###)-###-####" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                    <label class="applyLable" for="phone number">Phone:</label>
+                    <input class="applyInputs" type="tel" id="phone" placeholder="(###)-###-####" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
                     <br>
-                    <label for="lname">Tell us about yourself:</label>
-                    <textarea name="summary" rows="6" cols="35">Max: 200 words</textarea>
+                    <label class="applyLable" for="lname">Tell us about yourself:</label>
+                    <textarea class="applyInputs" id="about" name="summary" rows="6" cols="35">Max: 200 words</textarea>
                     <br>
-                    <label for="myfile">Upload a resume:</label>
-                    <input type="file" id="myfile" name="myfile" accept=".pdf, .doc, .docx" required>
+                    <label class="applyLable" for="myfile">Upload a resume:</label>
+                    <input class="applyInputs" type="file" id="myfile" name="myfile" accept=".pdf, .doc, .docx" required>
                     <br>
                     <p>
-                        <input type="submit" id="submit" name="Submit" value="Submit" >
+                        <input class="applyInputs" type="submit" id="submit" name="Submit" value="Submit" >
                     </p>
                 </form>
             </div>
@@ -107,8 +107,19 @@
         <script>
             document.addEventListener("DOMContentLoaded", function () {
                 let button = document.getElementById("submit");
-                button.addEventListener("click", validateForm);
+                button.addEventListener("click", saveForm);
             });
+
+            function saveForm() {
+                //If form is valid, save form information into local storage (normally would be sent to a server as it is an application)
+                if (validateForm){
+                    localStorage.setItem("name", document.getElementById("fname").value);
+                    localStorage.setItem("email", document.getElementById("email").value);
+                    localStorage.setItem("phone", document.getElementById("phone").value);
+                    localStorage.setItem("about", document.getElementById("about").value);
+                    localStorage.setItem("resume", document.getElementById("myFile").value);
+                }
+            }
 
             function validateForm() {
                 try {
