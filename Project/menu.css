@@ -1,0 +1,28 @@
+.column {
+  float: left;
+  width: 33.33%;
+  border: 1px solid red;
+  padding: 1px;
+  width: 200px;
+  text-align: center;
+  margin: 1px;
+  height: 300px;
+  margin-left: 35px;
+  border-radius: 25px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.row:before {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+h2 {
+  text-decoration: underline; 
+}
