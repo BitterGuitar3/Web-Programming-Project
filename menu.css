@@ -1,0 +1,28 @@
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+h2 {
+  text-decoration: underline; 
+}
+
+.column{
+  float:left;
+  height: auto;
+  width: 250px;
+  padding-top: 10px;
+  background: brown;
+  border-radius: 20px;
+  margin: 15px;
+  text-align: center;
+  border: 2px solid white;
+}
+
+.size{
+  display: flex;
+  justify-content: center;
+  min-height: 400px;
+}
